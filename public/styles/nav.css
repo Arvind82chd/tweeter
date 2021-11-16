@@ -1,0 +1,33 @@
+
+nav {
+  background-color: #4056A1; 
+  max-height: 120px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  color: #FFFFFF; 
+  margin-left: 1.5em; 
+  margin-top: 1em;
+  font-family: bungee;
+}
+
+.topRight {
+  color: #FFFFFF; 
+  font-family: sans pro; 
+  font-size: medium;
+  margin-bottom: 0
+}
+
+nav .textBar {
+  margin-right: 1.5em; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.angle-double-down {
+  color: crimson;
+  margin-right: 1.5em;
+}
