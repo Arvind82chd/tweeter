@@ -10,7 +10,7 @@ header {
     /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
 
-.belowNav{
+.belowNav {
     display: flex;
     flex-direction: column;
     justify-content:space-between;
