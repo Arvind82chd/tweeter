@@ -2,8 +2,10 @@
 nav {
   background-color: #4056A1; 
   max-height: 120px;
+  width:100%;
   display: flex;
   justify-content: space-between;
+  position: static;
 }
 
 .logo {

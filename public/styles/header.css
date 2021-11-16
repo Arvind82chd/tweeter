@@ -1,18 +1,21 @@
 header {
-    display: flexbox;
+    display: flex;
     height: 520px;
-    width: auto;
-    background-color: salmon;
-    justify-content:space-evenly;
+    
+   flex-direction: column;
+    align-items: center;
+    justify-content:space-between;
+    background-color: #e7a427;
+    background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png");
+    /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
 
-.avatar {
-    justify-content: center;
-    align-items: center;
+.belowNav{
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
 }
 
 .userName {
-    justify-content: center;
-    align-items: flex-end;
     color: #FFFFFF;
 }
