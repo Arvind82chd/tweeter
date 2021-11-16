@@ -3,7 +3,7 @@ header {
     height: 520px;
     width: auto;
     background-color: salmon;
-    justify-content:space-around;
+    justify-content:space-evenly;
 }
 
 .avatar {
@@ -13,5 +13,6 @@ header {
 
 .userName {
     justify-content: center;
-    align-self: flex-end;
+    align-items: flex-end;
+    color: #FFFFFF;
 }
