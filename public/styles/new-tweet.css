@@ -3,20 +3,29 @@
  justify-content: center;
  position: static;
  margin-top: 1em;
- flex-direction: row;
+ flex-direction: column;
 }
 
 .formLineBottom {
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-self:baseline;
     font-family: bungee;
     flex-direction: row;
+    display: flex;
 
 }
 
-.counter {
-    
+#tweet-text {
+    width: 100%;    
+    border: 0px;
+    background-color: transparent;
+    border-bottom: 2px solid black;
+
 }
+/* .counter {
+    font-family: bungee;
+    align-self: end;
+} */
 
 .btn {
     font-family: bungee;
