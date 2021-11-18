@@ -32,3 +32,7 @@
     color: #FFFFFF;
     align-self: start;
 }
+.btn:hover {
+    color: #4056A1;
+    background-color: #FFFFFF;
+}
