@@ -1,21 +1,18 @@
 .topHeader {
     display: flex;
     height: 520px;
-    
-   flex-direction: column;
+    flex-direction: column;
     align-items: center;
-    justify-content:space-between;
+    justify-content:space-evenly;
     background-color: #e7a427;
     background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png");
-    /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
 
 .belowNav {
-    display: flex;
-    flex-direction: column;
-    justify-content:space-between;
+    margin-top: 120px;
 }
 
 .userName {
     color: #FFFFFF;
+    align-items: center;
 }
