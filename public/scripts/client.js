@@ -53,17 +53,19 @@ const renderTweets = function (data) {
 // }
 
 $(document).ready(function () {
-  
+  $.get("/tweets", function (data, status) {
+    renderTweets(data);
+  })
   $(".tweetForm").submit(function (event) {
     event.preventDefault();
-    if ($("#count" === 0 || "#tweet-text" === '' || "#tweet-text" === null)) {
+    const tweetText = $("#tweet-text");
+    if ($("#tweet-text").val().length === 0 || $("#tweet-text").val() === null) {
       alert("Enter some valid data");
       return;
-    } else if ($("#count" > 140)) {
+    } else if ($("#tweet-text").val().length > 140) {
       alert("You have exeded your alphabet limit of 140");
       return;
     } 
-    const tweetText = $("#tweet-text");
     $.post("/tweets", { text: tweetText.val() }, function (data) {
       tweetText.val('');
       $.get("/tweets", function (data, status) {
