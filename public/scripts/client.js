@@ -5,35 +5,11 @@
  */
 // const tweetData = require("./data-files/initial-tweets");
 
-const data = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png"
-        ,
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1461116232227
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd" },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1461113959088
-    }
-  ]
 
-  
-const createTweetElement = function(data) {
-    // console.log("createTweetElement", data);
-    const element = `
+
+const createTweetElement = function (data) {
+  // console.log("createTweetElement", data);
+  const element = `
     <article class="singleTweet">
         <header class="row1">
           <div class="elementR1">
@@ -55,19 +31,46 @@ const createTweetElement = function(data) {
           </footer>
       </article>
     `;
-    return $(element)
+  return $(element)
 }
 
-const renderTweets = function(data) {
-    const tweetContainer = $("#allTweets")
-    // console.log(tweetContainer);
-    for (let tweet of data) {
-        const element = createTweetElement(tweet);
-        tweetContainer.append(element)
-    }// loops through tweets
-    // calls createTweetElement for each tweet
-    // takes return value and appends it to the tweets container
-  }
+const renderTweets = function (data) {
+  const tweetContainer = $("#allTweets") //
+  //tweetContainer.empty();
+  // console.log(tweetContainer);
+  for (let tweet of data) {
+    const element = createTweetElement(tweet);
+    tweetContainer.append(element) //reponsible for sending the element to tweetContainer location
+  }// loops through tweets
+  // calls createTweetElement for each tweet
+  // takes return value and appends it to the tweets container
+}
 
+// const loadtweets = function (data) {
+//   $.get("/tweets", function (data, status) {
+//     renderTweets(data);
+//   })
+// }
+
+$(document).ready(function () {
+  
+  $(".tweetForm").submit(function (event) {
+    event.preventDefault();
+    if ($("#count" === 0 || "#tweet-text" === '' || "#tweet-text" === null)) {
+      alert("Enter some valid data");
+      return;
+    } else if ($("#count" > 140)) {
+      alert("You have exeded your alphabet limit of 140");
+      return;
+    } 
+    const tweetText = $("#tweet-text");
+    $.post("/tweets", { text: tweetText.val() }, function (data) {
+      tweetText.val('');
+      $.get("/tweets", function (data, status) {
+        renderTweets(data);
+      })
+    });
+  })
+});
 
 renderTweets(data)
