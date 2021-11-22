@@ -5,7 +5,11 @@
  */
 // const tweetData = require("./data-files/initial-tweets");
 
-
+const escape = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
 
 const createTweetElement = function (data) {
   // console.log("createTweetElement", data);
@@ -19,7 +23,7 @@ const createTweetElement = function (data) {
           <h4>${data.user.handle}</h4> 
         </header>
         <div class="row2">
-          <p>${data.content.text}</p>
+          <p>${escape(data.content.text)}</p>
         </div>
           <footer class="row3">
             <h6>${timeago.format(data.created_at)}</h6>
